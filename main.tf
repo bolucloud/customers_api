@@ -5,7 +5,7 @@ terraform {
     organization = "bolucloud"
 
     workspaces {
-      name = "customers-api"
+      name = "customers_api"
     }
   }
 
