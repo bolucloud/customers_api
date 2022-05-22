@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router;
-const AWS = require("AWS");
+const AWS = require("aws-sdk");
 
 AWS.config.update({
   region: "us-east-2",
 });
 
-const dynamodb = new AWS.DynamoDb.DocumentClient();
+const dynamodb = new AWS.DynamoDB.DocumentClient();
 const dynamodbTableName = "customer-list";
 
 router.get("/", async (req, res) => {
