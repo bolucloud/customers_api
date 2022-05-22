@@ -131,7 +131,7 @@ router.delete("/", async (req, res) => {
 async function scanDynamoRecords(scanParams, itemArray) {
   try {
     const dynamoData = await dynamodb.scan(scanParams).promise();
-    itemArray = itemArray.concat(dynamoData.items);
+    itemArray = itemArray.concat(dynamoData.Items);
     if (dynamoData.LastEvaluatedKey) {
       scanParams.ExclusiveStartKey = dynamodb.LastEvaluatedKey;
       return await scanDynamoRecords(scanParams, itemArray);
