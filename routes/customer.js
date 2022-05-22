@@ -74,7 +74,7 @@ router.patch("/", async (req, res) => {
   const params = {
     TableName: dynamodbTableName,
     Key: {
-      customerId: req.body.productId,
+      customerId: req.body.customerId,
     },
     UpdateExpression: `set ${req.body.updateKey} = :value`,
     ExpressionAttributeValues: {
@@ -130,7 +130,7 @@ router.delete("/", async (req, res) => {
 
 async function scanDynamoRecords(scanParams, itemArray) {
   try {
-    const dynamodb = await dynamodb.scan(scanParams).promise();
+    const dynamoData = await dynamodb.scan(scanParams).promise();
     itemArray = itemArray.concat(dynamoData.items);
     if (dynamoData.LastEvaluatedKey) {
       scanParams.ExclusiveStartKey = dynamodb.LastEvaluatedKey;
