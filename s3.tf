@@ -10,7 +10,7 @@ resource "aws_s3_bucket_acl" "customer_api_bucket_acl" {
   acl    = "public-read"
 }
 
-resource "aws_s3_bucket_object" "customer_api_ebs_deployment" {
+resource "aws_s3_object" "customer_api_ebs_deployment" {
   bucket = aws_s3_bucket.customer_api_bucket.id
   key    = "customer-api-key"
   acl    = "public-read"
