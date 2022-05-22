@@ -49,7 +49,7 @@ router.get("/all", async (req, res) => {
 router.post("/", async (req, res) => {
   const params = {
     TableName: dynamodbTableName,
-    Items: req.body,
+    Item: req.body,
   };
   await dynamodb
     .put(params)
