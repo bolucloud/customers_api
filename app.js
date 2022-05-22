@@ -3,11 +3,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const customerRouter = require("./routes/customer");
-const apiVersion = "1.0.0"
-
+const apiVersion = "1.0.0";
 
 app.use(express.json());
-app.use("./customer", customerRouter);
+app.use("/customer", customerRouter);
 
 app.get("/", (req, res) => {
   res.send(
@@ -20,5 +19,5 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Customer_api app is up and listening to port: ' + port)
-})
+  console.log("Customer_api app is up and listening to port: " + port);
+});
