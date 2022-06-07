@@ -2,6 +2,10 @@
 
 Created a simple customers API for an e-commerce store.
 
+## Status
+
+Resources destroyed in tf. Code 100% functional.
+
 ### Stack
 
 - Node.js
@@ -27,3 +31,7 @@ Delete: /customers
 ## Architecture
 
 ![customer api cloud architecture diagram](/customers_api.png)
+
+## Status
+
+Resources destroyed in tf. Code 100% functional.
